@@ -1,0 +1,11 @@
+framework module audio_visualizer {
+  umbrella header "audio_visualizer-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module audio_visualizer.Swift {
+  header "audio_visualizer-Swift.h"
+  requires objc
+}

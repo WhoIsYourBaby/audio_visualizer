@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh
+${BUILT_PRODUCTS_DIR}/audio_visualizer/audio_visualizer.framework
+${BUILT_PRODUCTS_DIR}/integration_test/integration_test.framework
+${BUILT_PRODUCTS_DIR}/path_provider_foundation/path_provider_foundation.framework
+${BUILT_PRODUCTS_DIR}/record_darwin/record_darwin.framework
