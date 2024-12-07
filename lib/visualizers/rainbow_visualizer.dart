@@ -123,6 +123,7 @@ class AudioBlockPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(AudioBlockPainter oldDelegate) {
+    return true;
     return data != oldDelegate.data ||
         blockHeight != oldDelegate.blockHeight ||
         blockSpacing != oldDelegate.blockSpacing;
