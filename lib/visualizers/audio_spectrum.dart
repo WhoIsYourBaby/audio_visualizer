@@ -36,82 +36,104 @@ enum BandType {
   thirtyOneBand,
 }
 
-const List<List<double>> kMiddleFrequenciesForBands = [
-  [125.0, 500, 1000, 2000],
-  [250.0, 400, 600, 800],
-  [63.0, 125, 500, 1000, 2000, 4000, 6000, 8000],
-  [31.5, 63, 125, 250, 500, 1000, 2000, 4000, 8000, 16000],
-  [
-    25.0,
-    31.5,
-    40,
-    50,
-    63,
-    80,
-    100,
-    125,
-    160,
-    200,
-    250,
-    315,
-    400,
-    500,
-    630,
-    800,
-    1000,
-    1250,
-    1600,
-    2000,
-    2500,
-    3150,
-    4000,
-    5000,
-    6300,
-    8000
-  ],
-  [
-    20.0,
-    25,
-    31.5,
-    40,
-    50,
-    63,
-    80,
-    100,
-    125,
-    160,
-    200,
-    250,
-    315,
-    400,
-    500,
-    630,
-    800,
-    1000,
-    1250,
-    1600,
-    2000,
-    2500,
-    3150,
-    4000,
-    5000,
-    6300,
-    8000,
-    10000,
-    12500,
-    16000,
-    20000
-  ]
-];
+extension BandTypeExt on BandType {
+  List<double> middleFrequenciesForBands() {
+    switch (this) {
+      case BandType.fourBand:
+        return [125.0, 500, 1000, 2000];
+      case BandType.fourBandVisual:
+        return [250.0, 400, 600, 800];
+      case BandType.eightBand:
+        return [63.0, 125, 500, 1000, 2000, 4000, 6000, 8000];
+      case BandType.tenBand:
+        return [31.5, 63, 125, 250, 500, 1000, 2000, 4000, 8000, 16000];
+      case BandType.twentySixBand:
+        return [
+          25.0,
+          31.5,
+          40,
+          50,
+          63,
+          80,
+          100,
+          125,
+          160,
+          200,
+          250,
+          315,
+          400,
+          500,
+          630,
+          800,
+          1000,
+          1250,
+          1600,
+          2000,
+          2500,
+          3150,
+          4000,
+          5000,
+          6300,
+          8000
+        ];
+      case BandType.thirtyOneBand:
+        return [
+          20.0,
+          25,
+          31.5,
+          40,
+          50,
+          63,
+          80,
+          100,
+          125,
+          160,
+          200,
+          250,
+          315,
+          400,
+          500,
+          630,
+          800,
+          1000,
+          1250,
+          1600,
+          2000,
+          2500,
+          3150,
+          4000,
+          5000,
+          6300,
+          8000,
+          10000,
+          12500,
+          16000,
+          20000
+        ];
+      default:
+        return [];
+    }
+  }
 
-const List<double> kBandwidthForBands = [
-  1.414,
-  1.260,
-  1.414,
-  1.414,
-  1.122,
-  1.122
-];
+  double bandWidth() {
+    switch (this) {
+      case BandType.fourBand:
+        return 1.414;
+      case BandType.fourBandVisual:
+        return 1.260;
+      case BandType.eightBand:
+        return 1.414;
+      case BandType.tenBand:
+        return 1.414;
+      case BandType.twentySixBand:
+        return 1.122;
+      case BandType.thirtyOneBand:
+        return 1.122;
+      default:
+        return 1.414;
+    }
+  }
+}
 
 class AudioSpectrumValue {
   final List<int> levels;
@@ -163,7 +185,7 @@ class _AudioSpectrumState extends State<AudioSpectrum> {
   late List<int> meanLevels;
 
   void _init() {
-    int bandCount = kMiddleFrequenciesForBands[widget.bandType.index].length;
+    int bandCount = widget.bandType.middleFrequenciesForBands().length;
     levels = List.filled(bandCount, 0);
     peakLevels = List.filled(bandCount, 0);
     meanLevels = List.filled(bandCount, 0);
@@ -202,8 +224,8 @@ class _AudioSpectrumState extends State<AudioSpectrum> {
   void _update(List<int> input) {
     final fallDown = widget.fallSpeed * (1 / 60);
     final filter = math.exp(-widget.sensibility * (1 / 60));
-    final middleFrequencies = kMiddleFrequenciesForBands[widget.bandType.index];
-    final bandwidth = kBandwidthForBands[widget.bandType.index];
+    final middleFrequencies = widget.bandType.middleFrequenciesForBands();
+    final bandwidth = widget.bandType.bandWidth();
     for (int bi = 0; bi < levels.length; bi++) {
       final freq = middleFrequencies[bi];
       final iMin = _frequencyToSpectrumIndex(freq / bandwidth, input.length);

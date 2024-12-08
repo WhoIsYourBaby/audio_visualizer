@@ -1,0 +1,1 @@
+ /Users/ligun123/project/audio_visualizer/example/.dart_tool/flutter_build/04daba27426b22209a8e11d128ef5ec1/native_assets.yaml: 

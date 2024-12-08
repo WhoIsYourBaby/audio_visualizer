@@ -1,14 +1,14 @@
 # This is a generated file; do not edit or check into version control.
-audio_visualizer=/Users/ligun/harman/audio_visualizer-1.1.0/
-integration_test=/Users/ligun/flutter/packages/integration_test/
-path_provider=/Users/ligun/.pub-cache/hosted/pub.dev/path_provider-2.1.3/
-path_provider_android=/Users/ligun/.pub-cache/hosted/pub.dev/path_provider_android-2.2.3/
-path_provider_foundation=/Users/ligun/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.2/
-path_provider_linux=/Users/ligun/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
-path_provider_windows=/Users/ligun/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/
-record=/Users/ligun/.pub-cache/hosted/pub.dev/record-5.0.5/
-record_android=/Users/ligun/.pub-cache/hosted/pub.dev/record_android-1.1.0/
-record_darwin=/Users/ligun/.pub-cache/hosted/pub.dev/record_darwin-1.0.1/
-record_linux=/Users/ligun/.pub-cache/hosted/pub.dev/record_linux-0.7.1/
-record_web=/Users/ligun/.pub-cache/hosted/pub.dev/record_web-1.0.5/
-record_windows=/Users/ligun/.pub-cache/hosted/pub.dev/record_windows-1.0.2/
+audio_visualizer=/Users/ligun123/project/audio_visualizer/
+integration_test=/Users/ligun123/flutter/packages/integration_test/
+path_provider=/Users/ligun123/.pub-cache/hosted/pub.dev/path_provider-2.1.3/
+path_provider_android=/Users/ligun123/.pub-cache/hosted/pub.dev/path_provider_android-2.2.3/
+path_provider_foundation=/Users/ligun123/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.2/
+path_provider_linux=/Users/ligun123/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
+path_provider_windows=/Users/ligun123/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/
+record=/Users/ligun123/.pub-cache/hosted/pub.dev/record-5.0.5/
+record_android=/Users/ligun123/.pub-cache/hosted/pub.dev/record_android-1.1.0/
+record_darwin=/Users/ligun123/.pub-cache/hosted/pub.dev/record_darwin-1.0.1/
+record_linux=/Users/ligun123/.pub-cache/hosted/pub.dev/record_linux-0.7.1/
+record_web=/Users/ligun123/.pub-cache/hosted/pub.dev/record_web-1.0.5/
+record_windows=/Users/ligun123/.pub-cache/hosted/pub.dev/record_windows-1.0.2/
