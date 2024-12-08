@@ -103,12 +103,12 @@ class _MyAppState extends State<MyApp> {
                 final data = getMagnitudes(audioPlayer.value.fft);
                 return AudioSpectrum(
                   fftMagnitudes: data,
-                  bandType: BandType.tenBand,
+                  bandType: BandType.pixel16,
                   builder: (context, value, child) {
                     return RainbowBlockVisualizer(
                       data: value.levels,
-                      maxSample: 32,
-                      blockHeight: 14,
+                      maxSample: 64,
+                      blockHeight: 8,
                     );
                   },
                 );

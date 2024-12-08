@@ -34,6 +34,10 @@ enum BandType {
   tenBand,
   twentySixBand,
   thirtyOneBand,
+  // pixel led customize
+  pixel64,
+  pixel32,
+  pixel16,
 }
 
 extension BandTypeExt on BandType {
@@ -110,6 +114,19 @@ extension BandTypeExt on BandType {
           16000,
           20000
         ];
+      case BandType.pixel64:
+        return [20.0] +
+            BandType.thirtyOneBand.middleFrequenciesForBands() +
+            BandType.thirtyOneBand
+                .middleFrequenciesForBands()
+                .reversed
+                .toList() +
+            [20.0];
+      case BandType.pixel32:
+        return [20.0] + BandType.thirtyOneBand.middleFrequenciesForBands();
+      case BandType.pixel16:
+        return BandType.eightBand.middleFrequenciesForBands() +
+            BandType.eightBand.middleFrequenciesForBands().reversed.toList();
       default:
         return [];
     }
@@ -129,6 +146,12 @@ extension BandTypeExt on BandType {
         return 1.122;
       case BandType.thirtyOneBand:
         return 1.122;
+      case BandType.pixel64:
+        return 1.122;
+      case BandType.pixel32:
+        return 1.122;
+      case BandType.pixel16:
+        return 1.414;
       default:
         return 1.414;
     }
