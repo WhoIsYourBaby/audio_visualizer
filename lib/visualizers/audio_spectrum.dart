@@ -125,8 +125,11 @@ extension BandTypeExt on BandType {
       case BandType.pixel32:
         return [20.0] + BandType.thirtyOneBand.middleFrequenciesForBands();
       case BandType.pixel16:
-        return BandType.eightBand.middleFrequenciesForBands() +
-            BandType.eightBand.middleFrequenciesForBands().reversed.toList();
+        return BandType.eightBand
+                .middleFrequenciesForBands()
+                .reversed
+                .toList() +
+            BandType.eightBand.middleFrequenciesForBands();
       default:
         return [];
     }
