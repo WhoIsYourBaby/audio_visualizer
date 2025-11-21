@@ -38,6 +38,7 @@ enum BandType {
   pixel64,
   pixel32,
   pixel16,
+  pixel96,
 }
 
 extension BandTypeExt on BandType {
@@ -130,6 +131,11 @@ extension BandTypeExt on BandType {
                 .reversed
                 .toList() +
             BandType.eightBand.middleFrequenciesForBands();
+      case BandType.pixel96:
+        return BandType.pixel32.middleFrequenciesForBands() +
+            BandType.pixel32.middleFrequenciesForBands() +
+            BandType.pixel32.middleFrequenciesForBands();
+
       default:
         return [];
     }
